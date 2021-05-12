@@ -42,7 +42,7 @@ int interpolation_search(vector<int> arr, unsigned int low, unsigned int hi, int
  */
 
 template <typename T>
-int interpolation_search(vector<T> arr, unsigned int low, unsigned int hi, T item)
+int interpolation_search_tem(vector<T> arr, unsigned int low, unsigned int hi, T item)
 {
     if ((low > hi) || (item < arr[low]) || (item > arr[hi]))
         return -1;
@@ -54,8 +54,8 @@ int interpolation_search(vector<T> arr, unsigned int low, unsigned int hi, T ite
         return pivot;
         
     else if (arr[pivot] < item)
-        return interpolation_search(arr, pivot + 1, hi, item);
+        return interpolation_search_tem(arr, pivot + 1, hi, item);
 
     else //arr[pivot] > item
-        return interpolation_search(arr, low, pivot - 1, item);
+        return interpolation_search_tem(arr, low, pivot - 1, item);
 }
