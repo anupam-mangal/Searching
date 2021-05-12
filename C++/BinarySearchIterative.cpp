@@ -18,7 +18,7 @@ int binary_search_iterative(vector<int> arr, unsigned int left, unsigned int rig
 
     while (left <= right)
     {
-        int mid = left + (right - left) / 2;
+        unsigned int mid = left + (right - left) / 2;
 
         if (item == arr[mid])
             return mid;
@@ -53,7 +53,7 @@ int binary_search_iterative_tem(vector<T> arr, unsigned int left, unsigned int r
 
     while (left <= right)
     {
-        int mid = left + (right - left) / 2;
+        unsigned int mid = left + (right - left) / 2;
 
         if (item == arr[mid])
             return mid;
