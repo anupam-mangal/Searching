@@ -1,4 +1,4 @@
-// Jump Search is done on a sorted array. It does a step wise search followed by a linear search in the
+// Jump Search is done on a sorted array. It does a step wise search followed by a binary search in the
 // relevant step where the optimal step is √n for an array of n elements.
 // Time Complexity : O(√n) for searching in 'n' elements.
 // Space Complexity : O(1)
@@ -40,16 +40,11 @@ int jump_search(vector<int> arr, int item)
     // previous step.
     i = i - step;
 
-    // For linear search in block we need end index as below.
+    // For binary search in block we need end index as below.
     unsigned int end = min((i + step), size);
     
-    for (unsigned int j = i; j < end; j++)
-    {
-        if (item == arr[j])
-            return j;
-    }
-
-    return -1;
+    // See "Searching/C++/BinarySearchIterative.cpp" in this repository for below function
+    return binary_search_iterative(arr, i, end - 1, item);
 }
 
 // Template version of the above algorithm
@@ -62,7 +57,7 @@ int jump_search(vector<int> arr, int item)
  */
 
 template <typename T>
-int jump_search(vector<T> arr, T item)
+int jump_search_tem(vector<T> arr, T item)
 {
     // Item is not present in sorted array
     if (arr.empty() || item < arr[0]) || item > arr[arr.size() - 1])
@@ -95,11 +90,6 @@ int jump_search(vector<T> arr, T item)
     // For linear search in block we need end index as below.
     unsigned int end = min((i + step), size);
     
-    for (unsigned int j = i; j < end; j++)
-    {
-        if (item == arr[j])
-            return j;
-    }
-
-    return -1;
+    // See "Searching/C++/BinarySearchIterative.cpp" in this repository for below function
+    return binary_search_iterative_tem(arr, i, end - 1, item);
 }
