@@ -45,7 +45,7 @@ int binary_search_iterative(vector<int> arr, unsigned int left, unsigned int rig
  */
 
 template <typename T>
-int binary_search_iterative(vector<T> arr, unsigned int left, unsigned int right, T item)
+int binary_search_iterative_tem(vector<T> arr, unsigned int left, unsigned int right, T item)
 {
     // Item should be inside the range of sorted array elements
     if ((item < arr[left]) || (item > arr[right]))
