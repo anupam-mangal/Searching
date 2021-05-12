@@ -39,7 +39,7 @@ int binary_search_recursive(vector<int> arr, unsigned int start, unsigned int en
  */
 
 template <typename T>
-int binary_search_recursive(vector<T> arr, unsigned int left, unsigned int right, T item)
+int binary_search_recursive_tem(vector<T> arr, unsigned int left, unsigned int right, T item)
 {
     if (end < start)
         return -1;
@@ -50,8 +50,8 @@ int binary_search_recursive(vector<T> arr, unsigned int left, unsigned int right
         return mid;
 
     else if (item < arr[mid])
-        return binary_search_recursive(arr, start, mid - 1, item);
+        return binary_search_recursive_tem(arr, start, mid - 1, item);
         
     else // item > arr[mid]
-        return binary_search_recursive(arr, mid + 1, end, item);
+        return binary_search_recursive_tem(arr, mid + 1, end, item);
 }
