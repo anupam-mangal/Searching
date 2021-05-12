@@ -15,7 +15,7 @@ int binary_search_recursive(vector<int> arr, unsigned int start, unsigned int en
     if (end < start)
         return -1;
 
-    int mid = start + (end - start) / 2;
+    unsigned int mid = start + (end - start) / 2;
 
     if (item == arr[mid])
         return mid;
@@ -44,7 +44,7 @@ int binary_search_recursive_tem(vector<T> arr, unsigned int left, unsigned int r
     if (end < start)
         return -1;
 
-    int mid = start + (end - start) / 2;
+    unsigned int mid = start + (end - start) / 2;
 
     if (item == arr[mid])
         return mid;
